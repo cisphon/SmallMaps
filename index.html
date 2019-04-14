@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Small Maps</title>
+				
+		<script src="graph.js"></script>
+		<script>
+			function submito(){
+				var map = {
+					zero: {one: 2.0, sixteen: 4.8},
+					one: {zero: 2.0, two: 3.0},
+					two: {one: 3.0, three: 2.5},
+					three: {two: 2.5, four: 2.5},
+					four: {three:2.5 , five: 2.5},
+					five: {four:2.5 , six: 3.5},
+					six: {five: 3.5, seven: 2.5, fourteen: 4.8},
+					seven: {six: 2.5, eight: 2.5},
+					eight: {seven: 2.5, nine: 3.0},
+					nine: {eight: 3.0, ten: 2.5},
+					ten: {nine: 2.5, eleven: 3.0},
+					eleven: {ten: 3.0, twelve: 5.4, thirteen: 5.6},
+					twelve: {eleven: 5.4, thirteen: 1.0},
+					thirteen: {eleven: 5.6, twelve: 1.0, fourteen: 4.8},
+					fourteen: {six: 4.8, thirteen: 2.5, fifteen: 13.7 },
+					fifteen: {fourteen: 13.7, sixteen: 1.2},
+					sixteen: {zero: 4.8, fifteen: 1.2}
+				};
+				
+				var graph = new Graph(map);
+
+				var start = document.getElementById('start').value;
+				var target = document.getElementById('target').value;
+				
+				var path = graph.findShortestPath(start, target);
+
+				alert(path);
+			}
+		</script>
+
+	</head>
+	
+	<body>
+		<img src="FloorPlan.png" alt="Floor Plan"> </img>
+		<form> 
+			Input your starting location (a number):<input id="start" type="text" name="inputStart"/>
+			Input your target location (a number):<input id="target" type="text" name="inputTarget"/>
+			<button>
+		</form>
+		<input type = "button" onclick = "submito();" id = "button">
+		
+	</body>
+<html>
